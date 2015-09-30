@@ -1,0 +1,22 @@
+{
+  "author": "Mark Vayngrib <mark.vayngrib@lablz.com> (http://github.com/mvayngrib)",
+  "bugs": {
+    "url": "https://github.com/mvayngrib/bindall/issues"
+  },
+  "description": "bindAll from underscore.js",
+  "devDependencies": {
+    "tape": "latest"
+  },
+  "homepage": "https://github.com/mvayngrib/bindall",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "bindall",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mvayngrib/bindall.git"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "version": "1.0.0"
+}
