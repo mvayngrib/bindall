@@ -56,3 +56,26 @@ test('1 arg', function (t) {
     fn()
   })
 })
+
+test('1 arg, obj with prototype', function (t) {
+  t.plan(2)
+  function Obj () {}
+
+  Obj.prototype = {
+    a: 1,
+    b: function () {
+      t.equal(this, obj)
+    },
+    c: function () {
+      t.equal(this, obj)
+    }
+  }
+
+  var obj = new Obj()
+
+  bindAll(obj)
+  ;['b', 'c'].forEach(function (name) {
+    var fn = obj[name]
+    fn()
+  })
+})
