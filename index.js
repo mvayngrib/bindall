@@ -2,12 +2,15 @@
 module.exports = function bindAll (obj) {
   var i, length = arguments.length, key
   if (length === 1) {
-    var args = Object.keys(obj).filter(function (key) {
-      return typeof obj[key] === 'function'
-    })
+    // bind all functions of obj
+    // duplication of code, but doesn't create extra array
+    for (key in obj) {
+      if (typeof obj[key] === 'function') {
+        obj[key] = obj[key].bind(obj)
+      }
+    }
 
-    args.unshift(obj)
-    return bindAll.apply(null, args)
+    return obj
   }
 
   if (length <= 1) throw new Error('bindAll must be passed function names')
